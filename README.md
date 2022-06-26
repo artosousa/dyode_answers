@@ -6,7 +6,7 @@
 **ANSWER**
 I would create a new section 'editable-text.liquid' that would be able to be added like any other section on the home page through the theme customizer by clicking 'add section'. The liquid file would look like:
 
-```
+```liquid
     {%- assign homeText = section.settings.home_text -%}
     {%- assign fontSize = section.settings.home_text_font_size | append: "px" -%}
     {%- assign fontColor = section.settings.home_text_font_color -%}
