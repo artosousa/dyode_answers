@@ -1,9 +1,9 @@
 ## Liquid Test Answers
 
-***Question 1:***
+***QUESTION 1:***
 *Describe how you would make a line of text in a homepage section editable from theme customization and how you would access this in liquid.*
 
-**ANSWER**
+**ANSWER:**
 I would create a new section 'editable-text.liquid' that would be able to be added like any other section on the home page through the theme customizer by clicking 'add section'. The liquid file would look like:
 
 ```liquid
@@ -63,4 +63,108 @@ I would create a new section 'editable-text.liquid' that would be able to be add
             ]
         }
     {% endschema %}
+```
+
+***QUESTION 2:***
+*How would you add the collection featured image as a banner on the collection liquid template?*
+
+**ANSWER:**
+```liquid
+    {% if collection.image != blank %}
+        {{ collection.image.src | collection_img_url: '1400x' | img_tag: collection.title }}
+    {% endif %}
+```
+
+***QUESTION 3:***
+*Using liquid code and HTML, create a simple pagination container, "< 1 2 ... 5 >".*
+
+```liquid
+    {%- paginate collection.products by 5 -%}
+        {%- for product in collection.products -%}
+            <!-- show product details here -->
+        {%- endfor -%}
+        {{ paginate | default_pagination: next: '>', previous: '<' }}
+    {%- endpaginate -%}
+```
+
+or I would create a snippet 'simple-pagiginate.liquid' render it in collection page.
+
+```liquid
+    {% paginate collection.products by 2 %}
+        {% for product in collection.products %}
+            {{ product.title }}  
+        {% endfor %}
+        {%- if paginate.pages > 1 -%}
+            <nav role="navigation">
+                <ol class="pagination">
+                    {%- if paginate.previous-%}
+                        <li>
+                            <a href="{{ paginate.previous.url }}">
+                                <span aria-hidden="true">&laquo;</span>
+                                <span class="visuallyhidden">page</span>
+                            </a>
+                        </li>
+                    {%- else -%}
+                        <li class="disabled">
+                            <span aria-hidden="true">&laquo;</span>
+                            <span class="visuallyhidden">page</span>
+                        </li>
+                    {%- endif -%}
+
+                    {%- for part in paginate.parts -%}
+                        {%- if part.is_link -%}
+                            <li>
+                                <a href="{{ part.url }}">
+                                    <span class="visuallyhidden">page</span> {{ part.title }}
+                                </a>
+                            </li>
+                        {%- else -%}
+                            {%- if part.title == paginate.current_page -%}
+                                <li class="active" aria-current="page">
+                                    <span class="visuallyhidden">page</span> {{ part.title }}
+                                </li>
+                            {%- else -%}
+                                <li>
+                                    <span class="visuallyhidden">page</span> {{ part.title }}
+                                </li>
+                            {%- endif -%}
+                        {%- endif -%}
+                    {%- endfor -%}
+
+                    {%- if paginate.next -%}
+                        <li>
+                            <a href="{{ paginate.next.url }}">
+                                <span class="visuallyhidden">page</span>
+                                <span aria-hidden="true">&raquo;</span>
+                            </a>
+                        </li>
+                    {%- else -%}
+                        <li class="disabled">
+                            <span class="visuallyhidden">page</span>
+                            <span aria-hidden="true">&raquo;</span>
+                        </li>
+                    {%- endif -%}
+                </ol>
+            </nav>
+        {%- endif -%}
+    {%- endpaginate -%}
+
+    {%- style -%}
+        .visuallyhidden {
+            border: 0;
+            clip: rect(0 0 0 0);
+            height: 1px;
+            margin: -1px;
+            overflow: hidden;
+            padding: 0;
+            position: absolute;
+            width: 1px;
+            white-space: nowrap;
+        }
+
+        .pagination li {
+            display: inline; 
+            margin: 0 5px;
+        }
+    {%- endstyle -%}
 ```
