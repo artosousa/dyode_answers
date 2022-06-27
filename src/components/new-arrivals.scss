@@ -1,0 +1,113 @@
+
+//set variables
+$cursive: 'Pacifico';
+$sans-serif: 'Lato';
+$primary-header-color: #10504F;
+$white: #fff;
+$transparent-white:rgba(255, 255, 255, 0.6);
+$off-white: #efefef;
+
+$lighter: 100;
+$bold: 700;
+
+$desktop-slide-height: 70vh;
+$mobile-slide-height: 20vh;
+
+// Tablets and small desktops
+$screen-lg-min: 992px;
+
+//setting up mixins
+@mixin lg {
+    @media (min-width: #{$screen-lg-min}) {
+        @content;
+    }
+}
+.new-arrivals{
+    margin:25px 0px 0 0;
+    position: relative;
+    display:inline-flex;
+    align-items: center;
+    justify-content:center;
+    display:inline-flex;
+    flex-direction: column;
+    h1{
+        font-family: $cursive;
+        font-size: 26px;
+        line-height: 46px;
+    }
+    .slick-track{
+        margin: 25px 0px;
+        & > div {
+            .slide{
+                display:inline-flex !important;
+                flex-direction:column;
+                align-items: center;
+                justify-content: center;
+            }
+            .slide-img{
+                display: inline-flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                width:80%;
+                img{
+                    width: 100%;
+                    
+                }
+                .slide-footer{
+                    padding-top:25px;
+                    display:inline-flex;
+                    flex-direction: column;
+                    align-items: center;
+                    width: 100%;
+
+                    h3{
+                        font-family: $sans-serif;
+                        font-weight: 400;
+                        font-size: 16px;
+                        line-height: 19px;
+                        margin-bottom:5px;
+                        @include lg{
+                            font-size: 22px;
+                            line-height: 26px;
+                        }
+                    }
+                    p{
+                        font-family: $sans-serif;
+                        font-weight: $lighter;
+                        text-transform: uppercase;
+                        font-size: 16px;
+                        line-height: 19px;
+
+                        &.product-price{
+                            .dollar{
+                                display:inline-block;
+                                font-size: 24px;
+                                @include lg {
+                                    font-size: 36px; 
+                                }
+                            }
+                            font-size: 18px;
+                            line-height: 32px;
+                            font-family: $cursive;
+                            color: $primary-header-color;
+                            @include lg {
+                                font-size: 26px;
+                                line-height: 46px;
+                            }
+                        }
+                    }
+                }
+            }
+            
+        }
+    }
+    
+    .slick-prev,
+    .slick-next{
+        width: 6px;
+        height: 12px;
+        margin:20px;
+    }
+   
+}

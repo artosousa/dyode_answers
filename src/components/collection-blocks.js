@@ -1,7 +1,6 @@
+import "./collection-blocks.scss";
 import PropTypes from "prop-types";
 import React from "react";
-
-import "./collection-blocks.scss";
 
 const CollectionBlocks = (props) => {
   const { data } = props;

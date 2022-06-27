@@ -1,9 +1,10 @@
 import Accessories from "../images/Accessories_img.png";
+import HeaderOne from "../images/hero_1.png";
+import HeaderThree from "../images/hero_3.png";
+import HeaderTwo from "../images/hero_2.png";
 import Mens from "../images/mens_image.png";
+import Product from "../images/product.png";
 import Womens from "../images/womens_img.png";
-import headerOne from "../images/hero_1.png";
-import headerThree from "../images/hero_3.png";
-import headerTwo from "../images/hero_2.png";
 
 export const pageData = {
   announcements: [
@@ -13,21 +14,21 @@ export const pageData = {
   ],
   headers: [
     {
-      img: headerOne,
+      img: HeaderOne,
       heroTitle: "Shop New Arrivals",
       heroSub: "Our coolest new items are waiting for you!",
       heroUrl: "https://google.com",
       colorClass: null,
     },
     {
-      img: headerTwo,
+      img: HeaderTwo,
       heroTitle: "Our Fave Tees",
       heroSub: "Shop all of our favorites.",
       heroUrl: "https://google.com",
       colorClass: "white",
     },
     {
-      img: headerThree,
+      img: HeaderThree,
       heroTitle: "Men’s Tees",
       heroSub: "Find the perfect shirt.",
       heroUrl: "https://google.com",
@@ -49,6 +50,56 @@ export const pageData = {
       title: "Accessories",
       url: "https://arthursousa.com",
       img: Accessories,
+    },
+  ],
+  products: [
+    {
+      tag: "women's t-shirt",
+      title: "Product Title",
+      price: "19.99",
+      img: Product,
+    },
+    {
+      tag: "women's t-shirt",
+      title: "Product Title",
+      price: "19.99",
+      img: Product,
+    },
+    {
+      tag: "women's t-shirt",
+      title: "Product Title",
+      price: "19.99",
+      img: Product,
+    },
+    {
+      tag: "women's t-shirt",
+      title: "Product Title",
+      price: "19.99",
+      img: Product,
+    },
+    {
+      tag: "women's t-shirt",
+      title: "Product Title",
+      price: "19.99",
+      img: Product,
+    },
+    {
+      tag: "women's t-shirt",
+      title: "Product Title",
+      price: "19.99",
+      img: Product,
+    },
+    {
+      tag: "women's t-shirt",
+      title: "Product Title",
+      price: "19.99",
+      img: Product,
+    },
+    {
+      tag: "women's t-shirt",
+      title: "Product Title",
+      price: "19.99",
+      img: Product,
     },
   ],
 };

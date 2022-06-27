@@ -1,6 +1,4 @@
 import "./hero-slider.scss";
-import "slick-carousel/slick/slick-theme.css";
-import "slick-carousel/slick/slick.css";
 import PropTypes from "prop-types";
 import React from "react";
 import Slider from "react-slick";
@@ -16,7 +14,7 @@ const HeroSlider = (props) => {
   };
   const { data } = props;
   return (
-    <>
+    <section className="hero-slider">
       <Slider {...sliderSettings} className="slider">
         {data.headers.map((header, index) => {
           return (
@@ -41,7 +39,7 @@ const HeroSlider = (props) => {
           );
         })}
       </Slider>
-    </>
+    </section>
   );
 };
 HeroSlider.propTypes = {
