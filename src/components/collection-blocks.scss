@@ -17,7 +17,7 @@ $screen-lg-min: 992px;
     }
 }
 section{
-    margin:20px 0px;
+    margin:50px 0px;
     display:inline-flex;
     align-items: center;
     justify-content: center;
@@ -40,7 +40,7 @@ section{
                 height:217px;
                 background-size:cover;
                 @include lg{
-                    height: 569px;
+                    height: 452px;
                 }
             }
             @include sm {
