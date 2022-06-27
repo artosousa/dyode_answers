@@ -1,0 +1,36 @@
+{
+  "name": "dyode-test",
+  "version": "1.0.0",
+  "private": true,
+  "description": "dyode-test",
+  "keywords": [
+    "gatsby"
+  ],
+  "scripts": {
+    "develop": "gatsby develop",
+    "start": "gatsby develop",
+    "build": "gatsby build",
+    "serve": "gatsby serve",
+    "clean": "gatsby clean"
+  },
+  "dependencies": {
+    "babel-plugin-styled-components": "^2.0.7",
+    "gatsby": "^4.17.1",
+    "gatsby-plugin-google-fonts": "^1.0.1",
+    "gatsby-plugin-sass": "^5.17.0",
+    "gatsby-plugin-styled-components": "^5.17.0",
+    "prettier": "2.7.1",
+    "prop-types": "^15.8.1",
+    "react": "^18.1.0",
+    "react-dom": "^18.1.0",
+    "react-slick": "^0.29.0",
+    "sass": "^1.53.0",
+    "slick-carousel": "^1.8.1",
+    "styled-components": "^5.3.5"
+  },
+  "devDependencies": {
+    "@trevorblades/eslint-plugin": "^1.0.5",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-prettier": "^4.1.0"
+  }
+}

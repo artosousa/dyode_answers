@@ -1,0 +1,138 @@
+//set variables
+$cursive: 'Pacifico';
+$sans-serif: 'Lato';
+$primary-header-color: #10504F;
+$btn-bg: #000;
+$white: #fff;
+$transparent-white:rgba(255, 255, 255, 0.6);
+$off-white: #efefef;
+
+$light-weight: 100;
+
+$desktop-slide-height: 70vh;
+$mobile-slide-height: 20vh;
+
+// Tablets and small desktops
+$screen-lg-min: 992px;
+
+//setting up mixins
+@mixin lg {
+    @media (min-width: #{$screen-lg-min}) {
+        @content;
+    }
+}
+
+.slider{
+    .slide{
+        position:relative;
+        display:inline-flex !important;
+        flex-direction: column;
+        .slide-img{
+            width:100vw;
+            height:226px;
+            background-size: cover;
+            
+            background-repeat: no-repeat;
+            @include lg{
+                height:$desktop-slide-height;
+                background-position: 0% 10%;
+            }
+        }
+        .slide-copy{
+            background: $off-white;
+            display:inherit;
+            align-items: center;
+            justify-content:center;
+            flex-direction: column;
+            height:$mobile-slide-height;
+            
+            @include lg{
+                position:absolute;
+                z-index: 2;
+                background:none;
+                width: 100%;
+                height:$desktop-slide-height;
+                align-items: flex-start;
+                padding:0px 75px;
+            }
+            h1{
+                font-family: $cursive;
+                font-style: normal;
+                font-size: 26px;
+                color:$primary-header-color;
+                line-height: 46px;
+                text-align: center;
+                
+                @include lg{
+                    font-size: 60px;
+                    &.white{
+                        color: $white !important ;
+                    }
+                }
+            }
+            p{
+                font-family: $sans-serif;
+                font-style: normal;
+                font-weight: $light-weight;
+                font-size: 14px;
+                color:$primary-header-color;
+                line-height: 17px;
+                text-align: center;
+                @include lg{
+                    font-size: 26px;
+                    line-height: 66px;
+                    margin: 20px 0 0 0;
+                    &.white{
+                        color: $white !important ;
+                    }
+                }
+            }
+            a.shop-btn{
+                display:inline-flex;
+                align-items:center;
+                justify-content: center;
+                font-family: $sans-serif;
+                font-style: normal;
+                font-weight: $light-weight;
+                font-size: 12px;
+                line-height: 14px;
+                color: $white;
+                text-decoration: none;
+                margin:16px;
+                text-align: center;
+                letter-spacing: 0.1em;
+                text-transform: uppercase;
+                background: $btn-bg;
+                width: 124.55px;
+                height: 42px;
+                left: 126px;
+                @include lg{
+                    margin:0px;
+                }
+            }
+        }
+    }
+    ul.slick-dots{
+        position: relative;
+        top: -23vh;
+        
+        @include lg{
+            position:absolute;
+            top:auto;
+            bottom:20px;
+        }
+        li{
+            margin:3px;
+            button{
+                &:before{
+                    font-size:14px;
+                    color: $transparent-white;
+                }
+            }
+        &.slick-active{
+            color:$white;	
+        }
+        }
+        
+    }
+}
