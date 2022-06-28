@@ -1,0 +1,105 @@
+$cursive: 'Pacifico';
+$sans-serif: 'Lato';
+$primary-header-color: #10504F;
+$black: #000;
+$white: #fff;
+$screen-lg-min: 992px;
+
+@mixin lg {
+    @media (min-width: #{$screen-lg-min}) {
+        @content;
+    }
+}
+footer{
+    background: $black;
+    color: $white;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 25px 15px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    .container{
+        display:inline-flex;
+        align-items: flex-start;
+        justify-content: flex-start;
+        flex-direction: column;
+        
+        .footer-nav{
+            width: 100%;
+            @include lg{
+                display:inline-flex;
+                flex-direction: row;
+                justify-content: space-between;
+            }
+            .left-links{
+                @include lg{
+                    width:50%;
+                    display:inline-flex;
+                    flex-direction: row;
+                }
+            }
+            .link-list{
+                width: 100%;
+                .list-title{
+                    width: 100%;
+                    display: inline-flex;
+                    flex-direction: row;
+                    align-items: center;
+                    justify-content: space-between;
+
+                    span{
+                        display:block;
+                        cursor: pointer;
+                        font-size:16px;
+
+                        @include lg{
+                            display:none;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .show{
+        display:block;
+    }
+    .hide{
+        display: none;
+        @include lg{
+            display:block;
+        }
+    }
+    h3{
+        font-family: $cursive;
+        font-size: 22px;
+        line-height: 39px;
+        margin: 20px 0px 10px;
+    }
+    ul{
+        li{
+            a{
+                font-family: $sans-serif;
+                font-size: 12px;
+                line-height: 30px;
+                color: $white;
+                text-decoration: none;
+            }
+        }
+    }
+    .social-links{
+        display:inline-flex;
+        flex-direction: column;
+
+        ul{
+            display: inherit;
+            flex-direction: row;
+            align-items: center;
+            justify-content: flex-start;
+
+            li{
+                margin-right:25px;
+            }
+        }
+    }
+}

@@ -5,6 +5,7 @@ import "slick-carousel/slick/slick.css";
 import * as React from "react";
 import AnnounceHeader from "../components/announce-header";
 import CollectionBlocks from "../components/collection-blocks";
+import Footer from "../components/footer";
 import HeroSlider from "../components/hero-slider";
 import Navigation from "../components/navigation";
 import NewArrivals from "../components/new-arrivals";
@@ -26,6 +27,7 @@ const IndexPage = () => {
       <NewArrivals data={data} />
       <OurFavs data={data.favorite} />
       <NewsLetter data={data.newsletter} />
+      <Footer data={data} />
     </main>
   );
 };
