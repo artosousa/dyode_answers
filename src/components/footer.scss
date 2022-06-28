@@ -48,11 +48,13 @@ footer{
                     align-items: center;
                     justify-content: space-between;
 
+                    cursor: pointer;
+                    @include lg{
+                        cursor: default;
+                    }
                     span{
                         display:block;
-                        cursor: pointer;
                         font-size:16px;
-
                         @include lg{
                             display:none;
                         }
