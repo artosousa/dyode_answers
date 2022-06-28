@@ -1,0 +1,115 @@
+//set variables
+$cursive: 'Pacifico';
+$sans-serif: 'Lato';
+$primary-header-color: #10504F;
+$btn-bg: #000;
+$white: #fff;
+$transparent-white:rgba(255, 255, 255, 0.6);
+$off-white: #efefef;
+
+$light-weight: 100;
+
+$desktop-fav-height: 70vh;
+$mobile-fav-height: 20vh;
+
+// Tablets and small desktops
+$screen-lg-min: 992px;
+
+//setting up mixins
+@mixin lg {
+    @media (min-width: #{$screen-lg-min}) {
+        @content;
+    }
+}
+.our-favorites{
+    width: 100%;
+    box-sizing: border-box;
+    .fav{
+        position:relative;
+        display:inline-flex !important;
+        flex-direction: column;
+        width:100%;
+        .fav-img{
+            width:100%;
+            height:226px;
+            background-size: cover;
+            
+            background-repeat: no-repeat;
+            @include lg{
+                height:$desktop-fav-height;
+                background-position: 0% 10%;
+            }
+        }
+        .fav-copy{
+            background: $off-white;
+            display:inherit;
+            align-items: center;
+            justify-content:center;
+            flex-direction: column;
+            height:$mobile-fav-height;
+            box-sizing: border-box;
+            
+            @include lg{
+                position:absolute;
+                z-index: 2;
+                background:none;
+                width: 100%;
+                height:$desktop-fav-height;
+                align-items: flex-end;
+                padding:0px 100px;
+            }
+            h1{
+                font-family: $cursive;
+                font-style: normal;
+                font-size: 26px;
+                color:$primary-header-color;
+                line-height: 46px;
+                text-align: center;
+                
+                @include lg{
+                    font-size: 60px;
+                    color: $white !important ;
+                }
+            }
+            p{
+                font-family: $sans-serif;
+                font-style: normal;
+                font-weight: $light-weight;
+                font-size: 14px;
+                color:$primary-header-color;
+                line-height: 17px;
+                text-align: center;
+                @include lg{
+                    font-size: 26px;
+                    line-height: 66px;
+                    margin: 20px 0 0 0;
+                    color: $white !important ;
+                }
+            }
+            a.shop-btn{
+                display:inline-flex;
+                align-items:center;
+                justify-content: center;
+                font-family: $sans-serif;
+                font-style: normal;
+                font-weight: $light-weight;
+                font-size: 12px;
+                line-height: 14px;
+                color: $white;
+                text-decoration: none;
+                margin:16px;
+                text-align: center;
+                letter-spacing: 0.1em;
+                text-transform: uppercase;
+                background: $btn-bg;
+                width: 124.55px;
+                height: 42px;
+                left: 126px;
+                @include lg{
+                    background: $primary-header-color;
+                    margin:0px;
+                }
+            }
+        }
+    }
+}

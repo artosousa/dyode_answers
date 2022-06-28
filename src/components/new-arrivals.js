@@ -59,7 +59,7 @@ const NewArrivals = (props) => {
   const { data } = props;
   return (
     <section className="new-arrivals">
-      <h1>Shop New Arrivals</h1>
+      <h1>New Arrivals</h1>
       <Slider {...sliderSettings} className="slider container">
         {data.products.map((product, index) => {
           return <ProductItem data={product} key={index} />;

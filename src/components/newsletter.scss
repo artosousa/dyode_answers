@@ -1,0 +1,148 @@
+//set variables
+$cursive: 'Pacifico';
+$sans-serif: 'Lato';
+$primary-color: #10504F;
+$btn-bg: #000;
+$white: #fff;
+$transparent-white:rgba(255, 255, 255, 0.6);
+$off-white: #efefef;
+
+$light-weight: 100;
+
+$desktop-slide-height: 70vh;
+$mobile-slide-height: 20vh;
+
+// Tablets and small desktops
+$screen-lg-min: 992px;
+
+//setting up mixins
+@mixin lg {
+    @media (min-width: #{$screen-lg-min}) {
+        @content;
+    }
+}
+
+.newsletter{
+    width: 100%;
+    box-sizing: border-box;
+    display:inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background:$primary-color;
+    margin-top:-3px;
+    padding:50px;
+    .newsletter-title{
+        display:inline-flex;
+        align-items: center;
+        width: 100%;;
+        justify-content: center;
+        flex-direction: row;
+        img.mail-icon{
+            margin: 0 15px 0 0;
+            width:29px;
+
+            @include lg{
+                width: 53px;
+            }
+        }
+        h1{
+            font-family: $cursive;
+            font-size: 20px;
+            line-height: 35px;
+            color:$white;
+            @include lg{
+                font-size: 40px;
+                line-height: 70px;
+            }
+        }
+    }
+    .newsletter-content{
+        width: 100%;
+        display: inline-flex;
+        flex-direction: column;
+
+        @include lg{
+            flex-direction: row;
+        }
+       
+        .newsletter-copy{
+            text-align: center;
+            box-sizing: border-box;
+            padding:15px;
+            @include lg{
+                width: 50%;
+                text-align: left;
+                display: inline-flex;
+                align-items: center;
+            }
+            p{
+                font-family: $sans-serif;
+                font-size: 14px;
+                line-height: 17px;
+                font-weight: $light-weight;
+                color: $white;
+                align-items: center;
+                @include lg{
+                    font-size: 22px;
+                    line-height: 26px;
+                }
+            }
+        }
+        .newsletter-form{
+            display:inline-flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            @include lg{
+                width: 50%;
+            }
+            form{
+                width: 100%;
+                position: relative;
+                display: inherit;
+                flex-direction: column;
+                align-items: center;
+                @include lg{
+                    flex-direction: row;
+                }
+                input{
+                    background:$white;
+                    padding:10px;
+                    border: 1px solid $off-white;
+                    width:100%;
+                    box-sizing: border-box;
+                    @include lg{
+                        width: 73%;
+                        height:54px;
+                        font-size: 22px;
+                        line-height: 26px;          
+                        padding:12px;
+                        margin:0 15px 0 0;
+                    }
+                    ::placeholder {
+                        color: $off-white;
+                    }
+                }
+                button{
+                    color: $white;
+                    border: 2px solid $white;
+                    font-family: $sans-serif;
+                    font-size: 12px;
+                    line-height: 14px;
+                    background: none;
+                    padding: 10px 50px;
+                    margin: 25px 0;
+                    width: 60%;
+                    text-transform: uppercase;
+                    @include lg{
+                        width: 25%;
+                        padding: 18px 10px;
+                        font-size: 14px;
+                    }
+                }
+            }
+        }
+    }
+}

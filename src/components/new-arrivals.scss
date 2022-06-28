@@ -34,6 +34,10 @@ $screen-lg-min: 992px;
         font-family: $cursive;
         font-size: 26px;
         line-height: 46px;
+        @include lg{
+            font-size: 60px;
+            line-height: 105px;             
+        }
     }
     .slick-track{
         margin: 25px 0px;

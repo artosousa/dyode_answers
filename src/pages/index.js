@@ -8,6 +8,8 @@ import CollectionBlocks from "../components/collection-blocks";
 import HeroSlider from "../components/hero-slider";
 import Navigation from "../components/navigation";
 import NewArrivals from "../components/new-arrivals";
+import NewsLetter from "../components/newsletter";
+import OurFavs from "../components/our-favs";
 import { pageData } from "../data/page-data";
 
 const data = pageData;
@@ -22,6 +24,8 @@ const IndexPage = () => {
       <HeroSlider data={data} />
       <CollectionBlocks data={data} />
       <NewArrivals data={data} />
+      <OurFavs data={data.favorite} />
+      <NewsLetter data={data.newsletter} />
     </main>
   );
 };

@@ -1,10 +1,12 @@
 import "./hero-slider.scss";
 import PropTypes from "prop-types";
 import React from "react";
+import SlideItem from "./slide-item";
 import Slider from "react-slick";
 
 const HeroSlider = (props) => {
   const sliderSettings = {
+    autoplay: true,
     dots: true,
     infinite: true,
     speed: 500,
@@ -17,26 +19,7 @@ const HeroSlider = (props) => {
     <section className="hero-slider">
       <Slider {...sliderSettings} className="slider">
         {data.headers.map((header, index) => {
-          return (
-            <div className="slide" key={index}>
-              <div
-                className="slide-img"
-                style={{ backgroundImage: `url(${header.img})` }}
-              ></div>
-              <div className="slide-copy">
-                <h1 className={header.colorClass}>{header.heroTitle}</h1>
-                <p className={header.colorClass}>{header.heroSub}</p>
-                <a
-                  href={header.heroUrl}
-                  title={header.heroTitle}
-                  alt="shop now button"
-                  className="shop-btn"
-                >
-                  shop now
-                </a>
-              </div>
-            </div>
-          );
+          return <SlideItem data={header} key={index} />;
         })}
       </Slider>
     </section>

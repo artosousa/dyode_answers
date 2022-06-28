@@ -2,7 +2,9 @@ import Accessories from "../images/Accessories_img.png";
 import HeaderOne from "../images/hero_1.png";
 import HeaderThree from "../images/hero_3.png";
 import HeaderTwo from "../images/hero_2.png";
+import MailIcon from "../images/mail.svg";
 import Mens from "../images/mens_image.png";
+import OurFavsTee from "../images/fave_tees.png";
 import Product from "../images/product.png";
 import Womens from "../images/womens_img.png";
 
@@ -100,6 +102,69 @@ export const pageData = {
       title: "Product Title",
       price: "19.99",
       img: Product,
+    },
+  ],
+  favorite: {
+    title: "Our Favorite Tees",
+    sub: "Everyday tees you need",
+    url: "https://canvasskateboards.ca",
+    img: OurFavsTee,
+  },
+  newsletter: {
+    header: "Sign Up & Stay Connected",
+    sub: "Sign up for the newsletter and get 20% off! Gain access to exclusive offers and be the first to know when new stuff drops!",
+    icon: MailIcon,
+  },
+  footer: [
+    {
+      service_links: [
+        {
+          accessibility: {
+            title: "Accessibility",
+            url: "https://www.w3.org/WAI/fundamentals/accessibility-intro/",
+          },
+          contact: {
+            title: "Contact Us",
+            url: "https://arthursousa.com",
+          },
+          return: {
+            title: "Return Policy",
+            url: "https://arthursousa.com",
+          },
+          faq: {
+            title: "FAQ",
+            url: "https://arthursousa.com",
+          },
+          gift_cert: {
+            title: "Gift Certificates",
+            utl: "https://arthursousa.com",
+          },
+          wishlist: {
+            title: "Wish List",
+            url: "https://arthursousa.com",
+          },
+        },
+      ],
+      company: [
+        {
+          about: {
+            title: "About Us",
+            url: "https://arthursousa.com",
+          },
+          careers: {
+            title: "Careers",
+            url: "https://arthursousa.com",
+          },
+          press: {
+            title: "Press",
+            url: "https://arthursousa.com",
+          },
+          affiliates: {
+            title: "Affiliates",
+            url: "https://arthursousa.com",
+          },
+        },
+      ],
     },
   ],
 };
