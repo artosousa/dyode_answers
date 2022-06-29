@@ -43,7 +43,7 @@ $screen-lg-min: 992px;
         .fav-copy{
             background: $off-white;
             display:inherit;
-            align-items: center;
+            align-items: flex-start;
             justify-content:center;
             flex-direction: column;
             height:$mobile-fav-height;
@@ -56,7 +56,9 @@ $screen-lg-min: 992px;
                 width: 100%;
                 height:$desktop-fav-height;
                 align-items: flex-end;
-                padding:0px 100px;
+                padding: 100px;
+                justify-content: flex-start;
+                box-sizing: border-box;
             }
             h1{
                 font-family: $cursive;
